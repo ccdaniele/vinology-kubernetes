@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: vinology-server
+  labels:
+    app: server
+spec:
+      containers: 
+      - name: vinology-server
+        image: ccdaniele/vinology-server:1.2.1
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "256Mi"
+            cpu: "250m"
+        ports:
+          - containerPort: 3000
+            name: server-port

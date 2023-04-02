@@ -1,0 +1,32 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  selector:
+    matchLabels:
+      app: hello
+      tier: backend
+      track: stable
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: hello
+        tier: backend
+        track: stable
+    spec:
+      containers:
+        - name: vinology-server
+          image: ccdaniele/vinology-server:1.2
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "256Mi"
+              cpu: "250m"
+          ports:
+            - name: http
+              containerPort: 3000

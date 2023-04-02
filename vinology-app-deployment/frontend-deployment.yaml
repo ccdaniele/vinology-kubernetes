@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+spec:
+  selector:
+    matchLabels:
+      app: hello
+      tier: frontend
+      track: stable
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: hello
+        tier: frontend
+        track: stable
+    spec:
+      containers:
+        ## container react app
+        - name: vinology-client
+          image: ccdaniele/vinology-front:latest
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "500Mi"
+              cpu: "250m"      
+          ports:
+          - containerPort: 3001
+
+

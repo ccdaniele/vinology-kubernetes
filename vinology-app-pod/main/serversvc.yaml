@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: serversvc
+spec:
+  selector:
+    app: server
+  ports:
+    - name: serversvc
+      protocol: TCP
+      port: 3000
+      targetPort: server-port
