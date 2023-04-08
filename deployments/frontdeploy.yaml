@@ -18,13 +18,13 @@ spec:
       - name: vinclient
         image: ccdaniele/vin-client:v1.0.2_full_env
         imagePullPolicy: Always
-        resources:
-          requests:
-            memory: "100Mi"
-            cpu: "500m"
-          limits:
-            memory: "200Mi"
-            cpu: "600m"      
+        # resources:
+        #   # requests:
+        #   #   memory: "2Gi"
+        #   #   cpu: "3"
+        #   #   # limits:
+        #   #   #   memory: "3Gi"
+        #   #   #   cpu: "2Gi"  
         ports:
         - containerPort: 3001
         env:
