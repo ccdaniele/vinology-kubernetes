@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: client
+  name: frontdeploy
 spec:
   selector:
     matchLabels:
@@ -20,11 +20,11 @@ spec:
         imagePullPolicy: Always
         resources:
           requests:
-            memory: "64Mi"
-            cpu: "250m"
+            memory: "100Mi"
+            cpu: "500m"
           limits:
-            memory: "500Mi"
-            cpu: "250m"      
+            memory: "200Mi"
+            cpu: "600m"      
         ports:
         - containerPort: 3001
         env:
