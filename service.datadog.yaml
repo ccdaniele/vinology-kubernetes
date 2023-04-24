@@ -1,0 +1,7 @@
+---
+schema-version: v2
+
+team: test
+repos:
+  - name: k8s-app
+    url: https://github.com/ccdaniele/vinology-kubernetes
